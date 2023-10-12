@@ -1,5 +1,6 @@
 {
   "name": "todolist",
+  "homepage": "https://github.com/yanneskly/React-Todo.git",
   "private": true,
   "version": "0.0.0",
   "type": "module",
