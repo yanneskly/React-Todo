@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { NewTodoForm } from "./NewTodoForm";
 import { TodoList } from "./TodoList";
 import "./styles.css";
@@ -45,14 +45,14 @@ export default function App() {
 
   return (
     <HashRouter>
-      <>
-        <h1 className="header">To-Do Application</h1>
-        <NewTodoForm onSubmit={addTodo} />
-        <h2 className="header">To Do:</h2>
-        <Switch>
-        <Route path="/" render={() => <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />} />
-        </Switch>
-      </>
-    </HashRouter>
+    <>
+      <h1 className="header">To-Do Application</h1>
+      <NewTodoForm onSubmit={addTodo} />
+      <h2 className="header">To Do:</h2>
+      <Routes>
+        <Route path="/" element={<TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />} />
+      </Routes>
+    </>
+  </HashRouter>
   )
 }
